@@ -1,0 +1,85 @@
+
+
+DROP TABLE IF EXISTS "channels";
+
+CREATE TABLE "channels" (
+	"channel_no" INT,
+	"channel_title" VARCHAR,
+	CONSTRAINT "channel_title" PRIMARY KEY (
+		"channel_title"
+		)
+);
+SELECT * FROM channels;
+
+
+DROP TABLE IF EXISTS "categories";
+
+CREATE TABLE "categories" (
+    "category_id" INT   ,
+    "category" VARCHAR   ,
+	"detail" VARCHAR   ,
+	    CONSTRAINT "category_id" PRIMARY KEY (
+		"category_id"
+     ) 
+);
+
+SELECT * FROM categories;
+
+DROP TABLE IF EXISTS "trending_youtube";
+
+CREATE TABLE "trending_youtube" (
+    "video_id" VARCHAR   ,
+    "trending_date" VARCHAR   ,
+	"title" VARCHAR   ,
+	"channel_title" VARCHAR   ,
+	"category_id" INT   ,
+	"publish_time" VARCHAR   ,
+	"tags" VARCHAR   ,
+	"views" INT   ,
+	"likes" INT   ,
+	"dislikes" INT   ,
+	"comment_count" INT   ,
+	"thumbnail_link" VARCHAR   ,
+	"description" VARCHAR   ,
+	"country_code" VARCHAR,
+    FOREIGN KEY (channel_title) REFERENCES channels(channel_title)
+        
+);
+
+SELECT * FROM trending_youtube;
+
+
+
+DROP TABLE IF EXISTS "most_viewed_youtubers";
+
+CREATE TABLE "most_viewed_youtubers" (
+    "rank" INT   ,
+    "channel_title" VARCHAR   ,
+	"network" VARCHAR   ,
+	"views_in_billions" INT   ,
+	"country" VARCHAR   ,
+	"language" VARCHAR   ,
+	FOREIGN KEY (channel_title) REFERENCES channels(channel_title)
+        
+);
+
+SELECT * FROM most_viewed_youtubers;
+
+
+
+DROP TABLE IF EXISTS "most_subscribed_channels";
+
+CREATE TABLE "most_subscribed_channels" (
+    "rank" INT   ,
+    "channel_title" VARCHAR   ,
+	"subscribers_in_millions" INT  ,
+	"network" VARCHAR   ,
+	"language" VARCHAR   ,
+	
+	
+	FOREIGN KEY (channel_title) REFERENCES channels(channel_title)
+        
+);
+
+SELECT * FROM most_subscribed_channels;
+

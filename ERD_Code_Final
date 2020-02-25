@@ -1,0 +1,47 @@
+channels
+-
+channel_no INTEGER
+channel_title VARCHAR PK 
+	
+categories  
+-
+category_id  INTEGER PK
+category  VARCHAR 
+detail  VARCHAR   
+	    
+
+trending_youtube  
+-
+video_id  VARCHAR    
+trending_date  VARCHAR    
+title  VARCHAR    
+channel_title  VARCHAR  FK >- channels.channel_title  
+category_id  INTEGER  FK >- categories.category_id 
+publish_time  VARCHAR    
+tags  VARCHAR    
+views  INTEGER    
+likes  INTEGER    
+dislikes  INTEGER    
+comment_count  INTEGER    
+thumbnail_link  VARCHAR    
+description  VARCHAR    
+country_code  VARCHAR 
+  
+most_viewed_youtubers  
+-
+rank  INT    
+channel_title  VARCHAR   FK >- channels.channel_title 
+network  VARCHAR    
+views_in_billions  INT    
+country  VARCHAR    
+language  VARCHAR    
+
+most_subscribed_channels 
+-
+rank  INT    
+channel_title  VARCHAR    FK >- channels.channel_title
+subscribers_in_millions  INT   
+network  VARCHAR    
+language  VARCHAR    
+
+
