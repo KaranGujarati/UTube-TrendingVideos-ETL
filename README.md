@@ -1,4 +1,4 @@
-#### YouTube ETL Project
+## YouTube ETL Project
 
 ### PROJECT GOAL:
 
@@ -7,7 +7,7 @@ The aim of this YouTube (YT) ETL project is to use old and new data sources to:
 •	Transform and Format to prepare filtered datasets 
 •	Load datasets to make final production database of YouTube trending videos with Categories, Channel title, Subscribers, Network, Language, and Channel ID
 
-## EXTRACT:
+#### EXTRACT:
 
 For this project, we have used three data sources.
 •	HTML (web scrapping) – Wikipedia, Techpostplus
@@ -29,7 +29,7 @@ CSV files
 •	Datasets were available for multiple countries but for the simplicity and limit the amount of data, we used dataset of Canada
 
 
-## TRANSFORM:
+#### TRANSFORM:
 
 We used two csv files, one from Kaggle and the one we created using API. Below are the steps we used to organize the data for production database
 •	Dropped unnecessary or redundant columns
@@ -41,7 +41,7 @@ We used two csv files, one from Kaggle and the one we created using API. Below a
 
 
 
-## LOAD:
+#### LOAD:
 
 Used PostgreSQL because all of our datasets are very structured in a way so that we can use primary key and foreign key constraints to get effective query results. Created five tables, which are listed below.
 •	categories
